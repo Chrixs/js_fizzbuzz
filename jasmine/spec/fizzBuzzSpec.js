@@ -1,5 +1,5 @@
-describe("Fizzbuzz", function() {
-  var number;
+describe("Fizzbuzz Logic", function() {
+  var fizzbuzz;
 
   beforeEach(function() {
     fizzbuzz = new Fizzbuzz();
@@ -17,8 +17,42 @@ describe("Fizzbuzz", function() {
     expect(fizzbuzz.number(1,5)).toEqual([1,2,3,4,5])
   });
 
-  it("shold return Fizz if 3 is divisble by 3", function() {
+  it("should return true if 3 is divisble by 3", function() {
     expect(fizzbuzz.isDivisibleByThree(3)).toBe(true)
+  });
+
+  it("should return true if 5 is divisble by 5", function() {
+    expect(fizzbuzz.isDivisibleByFive(5)).toBe(true)
+  });
+
+  it("should return true if 15 is divisble by 15", function() {
+    expect(fizzbuzz.isDivisibleByFifteen(15)).toBe(true)
+  });
+
+  it ("should return false if 4 is indivisible by 3", function() {
+    expect(fizzbuzz.isDivisibleByThree(4)).toEqual(false)
+  });
+
+});
+
+describe("Fizzbuzz Frontend", function() {
+
+  var fizzbuzz;
+
+  beforeEach(function() {
+    fizzbuzz = new Fizzbuzz();
+  });
+
+  it ("should return Fizz if n is divisibe by 3", function () {
+    expect(fizzbuzz.test(3)).toEqual("Fizz")
+  });
+
+  it ("should return Buzz if n is divisibe by 5", function () {
+    expect(fizzbuzz.test(5)).toEqual("Buzz")
+  });
+
+  it ("should return Fizz if n is divisibe by 15", function () {
+    expect(fizzbuzz.test(15)).toEqual("FizzBuzz")
   });
 
 });
