@@ -51,8 +51,12 @@ describe("Fizzbuzz Frontend", function() {
     expect(fizzbuzz.test(5)).toEqual("Buzz")
   });
 
-  it ("should return Fizz if n is divisibe by 15", function () {
+  it ("should return Fizzbuzz if n is divisibe by 15", function () {
     expect(fizzbuzz.test(15)).toEqual("FizzBuzz")
+  });
+
+  it ("should return n if n is not divisibe by 15, 5 or 3", function () {
+    expect(fizzbuzz.test(14)).toEqual(14)
   });
 
 });
